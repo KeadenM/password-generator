@@ -2,13 +2,17 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-  var pwlength = 0;
+  var upperrange = [0,25];
+  var lowerranger = [26,52];
+  var numberrange = [53,63];
+  var specialrange = [64,95];
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,-./:;<=>?@]\[^_`{|}~";  
-  prompt("How many characters? (Needs to be at least 8 characters)")
-  prompt("Include Uppercase letters?")
-  prompt("Include Lowercase letters?")
-  prompt("Include numbers?")
-  prompt("Include special characters")
+  
+  var pwlength = prompt("How many characters? (Needs to be at least 8 characters)")
+  var upper = prompt("Include Uppercase letters?")
+  var lower = prompt("Include Lowercase letters?")
+  var number = prompt("Include numbers?")
+  var special = prompt("Include special characters")
   
 }
 // Write password to the #password input
