@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword(){
   var password = "";
   var upperrange = [0,25];
-  var lowerranger = [26,52];
+  var lowerrange = [26,52];
   var numberrange = [53,63];
   var specialrange = [64,95];
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,-./:;<=>?@]\[^_`{|}~";  
@@ -19,18 +19,35 @@ function generatePassword(){
   if (pwlength >=8){
 
     if (up.lower().trim() == "yes" || up.lower().trim() == "y"){
-
+      var start = Math.random(upperrange[0], upperrange[1]);
+      var end = start +1;
+      password += "" + characters.substring(start, end);
+      pwlength--;
     }
     if (low.lower().trim() == "yes" || low.lower().trim() == "y"){
-      
+      var start = Math.random(lowerrange[0], lowerrange[1]);
+      var end = start +1;
+      password += "" + characters.substring(start, end); 
+      pwlength--;
     }
 
     if (numb.lower().trim() == "yes" || numb.lower().trim() == "y"){
-    
+      var start = Math.random(numberrange[0], numberrange[1]);
+      var end = start +1;
+      password += "" + characters.substring(start, end);
+      pwlength--;
     }
 
     if (special.lower().trim() == "yes" || special.lower().trim() == "y"){
-      
+      var start = Math.random(specialrange[0], specialrange[1]);
+      var end = start +1;
+      password += "" + characters.substring(start, end);
+      pwlength--;
+    }
+    for (var i =0; i < pwlength; i++){
+      var start = Math.random(0, characters.length-1);
+      var end = start +1;
+      password += "" + characters.substring(start, end);
     }
   }
   else {
