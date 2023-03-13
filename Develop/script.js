@@ -19,33 +19,33 @@ function generatePassword(){
   if (pwlength >=8){
 
     if (up.toLowerCase().trim() == "yes" || up.toLowerCase().trim() == "y"){
-      var start = Math.random(upperrange[0], upperrange[1]);
+      var start = Math.random() * (upperrange[1] - upperrange[0]) + upperrange[0];
       var end = start +1;
       password += "" + characters.substring(start, end);
       pwlength--;
     }
     if (low.toLowerCase().trim() == "yes" || low.toLowerCase().trim() == "y"){
-      var start = Math.random(lowerrange[0], lowerrange[1]);
+      var start = Math.random() * (lowerrange[1] - lowerrange[0]) + lowerrange[0];
       var end = start +1;
       password += "" + characters.substring(start, end); 
       pwlength--;
     }
 
-    if (numb.toLowerCase().trim() == "yes" || numb.toLowerCase().trim() == "y"){
-      var start = Math.random(numberrange[0], numberrange[1]);
+    if (num.toLowerCase().trim() == "yes" || num.toLowerCase().trim() == "y"){
+      var start = Math.random() * (numberrange[1] - numberrange[0]) + numberrange[0];
       var end = start +1;
       password += "" + characters.substring(start, end);
       pwlength--;
     }
 
     if (special.toLowerCase().trim() == "yes" || special.toLowerCase().trim() == "y"){
-      var start = Math.random(specialrange[0], specialrange[1]);
+      var start = Math.random() * (specialrange[1] - specialrange[0]) + specialrange[0];
       var end = start +1;
       password += "" + characters.substring(start, end);
       pwlength--;
     }
     for (var i =0; i < pwlength; i++){
-      var start = Math.random(0, characters.length-1);
+      var start = Math.random() * (characters.length - 0) + 0;
       var end = start +1;
       password += "" + characters.substring(start, end);
     }
