@@ -1,8 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var password = "";
 function generatePassword(){
-  var password = "";
   var upperrange = [0,25];
   var lowerrange = [26,52];
   var numberrange = [53,63];
@@ -49,7 +48,7 @@ function generatePassword(){
       var end = start +1;
       password += "" + characters.substring(start, end);
     }
-    console.log(password);
+    writePassword();
   }
   else {
     alert("Length must be 8 or more characters");
@@ -57,7 +56,7 @@ function generatePassword(){
 }
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -65,4 +64,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword());
