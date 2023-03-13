@@ -8,14 +8,16 @@ function generatePassword(){
   var numberrange = [53,63];
   var specialrange = [64,95];
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,-./:;<=>?@]\[^_`{|}~";  
+  
+   
+  var pwlength = prompt("How many characters? (Needs to be at least 8 characters)");
   var num = prompt("Include numbers?");
-  if (num >=8){ 
-    var pwlength = prompt("How many characters? (Needs to be at least 8 characters)");
-    var up = prompt("Include Uppercase letters?");
-    var low = prompt("Include Lowercase letters?");
-    
-    var special = prompt("Include special characters");
-    
+  var up = prompt("Include Uppercase letters?");
+  var low = prompt("Include Lowercase letters?");
+  var special = prompt("Include special characters");
+
+  if (pwlength >=8){
+
     if (up.lower().trim() == "yes" || up.lower().trim() == "y"){
 
     }
