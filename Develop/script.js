@@ -18,27 +18,27 @@ function generatePassword(){
 
   if (pwlength >=8){
 
-    if (up.lower().trim() == "yes" || up.lower().trim() == "y"){
+    if (up.toLowerCase().trim() == "yes" || up.toLowerCase().trim() == "y"){
       var start = Math.random(upperrange[0], upperrange[1]);
       var end = start +1;
       password += "" + characters.substring(start, end);
       pwlength--;
     }
-    if (low.lower().trim() == "yes" || low.lower().trim() == "y"){
+    if (low.toLowerCase().trim() == "yes" || low.toLowerCase().trim() == "y"){
       var start = Math.random(lowerrange[0], lowerrange[1]);
       var end = start +1;
       password += "" + characters.substring(start, end); 
       pwlength--;
     }
 
-    if (numb.lower().trim() == "yes" || numb.lower().trim() == "y"){
+    if (numb.toLowerCase().trim() == "yes" || numb.toLowerCase().trim() == "y"){
       var start = Math.random(numberrange[0], numberrange[1]);
       var end = start +1;
       password += "" + characters.substring(start, end);
       pwlength--;
     }
 
-    if (special.lower().trim() == "yes" || special.lower().trim() == "y"){
+    if (special.toLowerCase().trim() == "yes" || special.toLowerCase().trim() == "y"){
       var start = Math.random(specialrange[0], specialrange[1]);
       var end = start +1;
       password += "" + characters.substring(start, end);
@@ -49,6 +49,7 @@ function generatePassword(){
       var end = start +1;
       password += "" + characters.substring(start, end);
     }
+    console.log(password);
   }
   else {
     alert("Length must be 8 or more characters");
