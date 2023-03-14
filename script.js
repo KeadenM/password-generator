@@ -9,14 +9,9 @@ function generatePassword(){
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,-./:;<=>?@]\[^_`{|}~";  
   
    
-  var pwlength = prompt("How many characters? (Needs to be at least 8 characters)");
-  var num = prompt("Include numbers?");
-  var up = prompt("Include Uppercase letters?");
-  var low = prompt("Include Lowercase letters?");
-  var special = prompt("Include special characters");
-
+  
   if (pwlength >=8){
-
+    
     if (up.toLowerCase().trim() == "yes" || up.toLowerCase().trim() == "y"){
       var start = Math.random() * (upperrange[1] - upperrange[0]) + upperrange[0];
       var end = start +1;
@@ -29,7 +24,7 @@ function generatePassword(){
       password += "" + characters.substring(start, end); 
       pwlength--;
     }
-
+    
     if (num.toLowerCase().trim() == "yes" || num.toLowerCase().trim() == "y"){
       var start = Math.random() * (numberrange[1] - numberrange[0]) + numberrange[0];
       var end = start +1;
@@ -56,11 +51,15 @@ function generatePassword(){
 }
 // Write password to the #password input
 function writePassword() {
-  //var password = generatePassword();
+  var pwlength = prompt("How many characters? (Needs to be at least 8 characters)");
+  var num = prompt("Include numbers?");
+  var up = prompt("Include Uppercase letters?");
+  var low = prompt("Include Lowercase letters?");
+  var special = prompt("Include special characters");
   var passwordText = document.querySelector("#password");
-
+  
   passwordText.value = password;
-
+  
 }
 
 // Add event listener to generate button
